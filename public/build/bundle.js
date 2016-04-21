@@ -51,9 +51,9 @@
 
 	const app = angular.module('app', []);
 
-	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./js/services/other-service\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()))(app);
+	__webpack_require__(10)(app);
 
-	app.controller('RenderController', ['$http', 'OtherService', function($http, OtherService) {
+	app.controller('RenderController', ['OtherService', function(OtherService) {
 	  var self = this;
 
 	  self.newOrder = 'Dummy Order';
@@ -31371,6 +31371,26 @@
 	exports.push([module.id, "", ""]);
 
 	// exports
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+	  app.factory('OtherService', function() {
+	    var orders = {}
+
+	    orders.list = [];
+
+	    orders.add = function(order) {
+	      orders.list.push({id: orders.list.length, text: message});
+	    }
+	    
+
+	    return orders;
+	  });
+	};
 
 
 /***/ }

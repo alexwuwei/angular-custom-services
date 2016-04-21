@@ -5,9 +5,9 @@ require(__dirname + '/../css/animate.css');
 
 const app = angular.module('app', []);
 
-require('./js/services/other-service')(app);
+require('./services/other-service')(app);
 
-app.controller('RenderController', ['$http', 'OtherService', function($http, OtherService) {
+app.controller('RenderController', ['OtherService', function(OtherService) {
   var self = this;
 
   self.newOrder = 'Dummy Order';
