@@ -1,19 +1,22 @@
 require(__dirname + '/../public/js/app.js');
-const angular = require(__dirname + '/../bower_components/angular/angular.js');
+const angular = require('angular');
 require('angular-mocks');
 
 describe('service test', function() {
-  var OtherService;
-  beforeEach(angular.mock.module('app'))
-  beforeEach(angular.mock.inject(function(OtherService) {
-    OtherService = OtherService;
-  }));
-  it('should be a service', function() {
-    expect(typeof OtherService).toBe('object')
+  var SomeOtherService;
+  beforeEach(function(done) {
+    angular.mock.module('app');
+    angular.mock.inject(function(OtherService) {
+      SomeOtherService = OtherService;
+      done();
+    });
   });
-  it('should return an object', function(){
-    var testOrder = OtherService('test');
+  it('should be a service', function() {
+    expect(typeof SomeOtherService).toBe('object');
+  });
+  it('should return an object', function() {
+    var testOrder = SomeOtherService.add('test');
     expect(typeof testOrder).toBe('object');
-    expect(testOrder.text).toBe('test')
+    expect(testOrder[0].text).toBe('test');
   })
 })

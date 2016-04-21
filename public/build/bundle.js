@@ -31385,6 +31385,7 @@
 
 	    orders.add = function(order) {
 	      orders.list.push({id: orders.list.length, text: order});
+	      return orders.list
 	    }
 
 

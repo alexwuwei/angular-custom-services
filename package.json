@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/alexwuwei/angular-custom-services#readme",
   "dependencies": {
+    "angular": "^1.5.5",
     "del": "^2.2.0",
     "express": "^4.13.4"
   },
