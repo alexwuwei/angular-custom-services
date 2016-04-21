@@ -1,5 +1,5 @@
-require('./public/js/app.js')
-const angular = require(__dirname + '/../../bower_components/angular/angular.js');
+require(__dirname + '/../public/js/app.js');
+const angular = require(__dirname + '/../bower_components/angular/angular.js');
 require('angular-mocks');
 
 describe('service test', function() {

@@ -5,14 +5,14 @@ require(__dirname + '/../css/animate.css');
 
 const app = angular.module('app', []);
 
-require('./js/services/other-service')(app);
+require('./services/other-service')(app);
 
 app.controller('RenderController', ['$http', 'OtherService', function($http, OtherService) {
   var self = this;
 
   self.newOrder = 'Dummy Order';
 
-  self.orders = orders.list;
+  self.orders = OtherService.list;
 
 }]);
 
@@ -20,7 +20,7 @@ app.controller('PushController', ['$http', 'OtherService', function($http,OtherS
   var self = this;
 
   self.addOrder = function(order) {
-    orders.add(order);
+    OtherService.add(order);
     self.newOrder = '';
   };
 }]);
