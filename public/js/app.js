@@ -7,10 +7,20 @@ const app = angular.module('app', []);
 
 require('./js/services/other-service')(app);
 
-app.controller('ResourceController', ['$http', 'OtherService', function($http, OtherService) {
+app.controller('RenderController', ['$http', 'OtherService', function($http, OtherService) {
+  var self = this;
+
+  self.newOrder = 'Dummy Order';
+
+  self.orders = orders.list;
 
 }]);
 
-app.controller('AssetController', ['$http', 'OtherService', function($http,OtherService) {
+app.controller('PushController', ['$http', 'OtherService', function($http,OtherService) {
+  var self = this;
 
+  self.addOrder = function(order) {
+    orders.add(order);
+    self.newOrder = '';
+  };
 }]);

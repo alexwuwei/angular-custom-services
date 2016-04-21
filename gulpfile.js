@@ -17,7 +17,8 @@ gulp.task('del-build', () => {
   return del([
     __dirname + '/public/build/**', __dirname + '!/public/build'
   ])
-  .then(paths => console.log('deleted files and folders:\n', paths.join('\n')));
+  .then(paths => console.log('Deleted files and folders:\n', paths.join('\n')));
+});
 
   gulp.task('copy-html', () => {
   gulp.src(__dirname + '/public/index.html')
@@ -50,4 +51,3 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', ['eslint', 'del-build', 'webpack', 'copy-html', 'copy-css']);
-})
